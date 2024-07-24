@@ -21,5 +21,4 @@ public interface ReservationServiceI {
 	public void updateData(int rid, Reservation r);
 
 	
-
 }

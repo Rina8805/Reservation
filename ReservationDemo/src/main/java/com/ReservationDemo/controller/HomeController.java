@@ -79,7 +79,7 @@ public class HomeController {
 	public ResponseEntity<String> updateData(@PathVariable int rid,@RequestBody Reservation r)
 	{
 	     rsi.updateData(rid,r);
-		    
+	    
 		 return new ResponseEntity<String>("Data Updated..",HttpStatus.OK);	
 	}
 	

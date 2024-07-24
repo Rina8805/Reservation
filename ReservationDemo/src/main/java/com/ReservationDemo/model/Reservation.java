@@ -26,7 +26,7 @@ public class Reservation {
 	private Date reservationDate;
 	@Temporal(TemporalType.TIME)
 	private Time reservationTime;
-	
+	 
 	
 	
 
