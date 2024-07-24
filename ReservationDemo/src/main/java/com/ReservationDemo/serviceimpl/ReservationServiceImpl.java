@@ -1,6 +1,7 @@
 package com.ReservationDemo.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,6 +55,22 @@ public class ReservationServiceImpl implements ReservationServiceI{
 	{
 		return rr.getDataByEmail(email);
 	}
+
+	@Override
+	public void updateData(int rid, Reservation r)
+	{
+		Optional<Reservation> opr = rr.findById(rid);
+		if(opr.isPresent())
+		{
+			rr.updateData(rid, r.getRname(),r.getContact(),r.getEmail(),r.getAge(),r.getGender());
+		}
+		else {
+			throw new RuntimeException("User with id :"+rid+"is not present");
+		}
+		
+	}
+
 	
+
 	
 }

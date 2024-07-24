@@ -18,4 +18,7 @@ public interface ReservationServiceI {
 
 	public Reservation getByEmail(String email);
 
+	public void updateData(int rid, Reservation r);
+
+	
 }

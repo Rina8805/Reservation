@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.service.annotation.PutExchange;
@@ -73,7 +74,14 @@ public class HomeController {
 	}
 	
 	
-	
+	// Update Data
+	@PutMapping("/updateData/{rid}")
+	public ResponseEntity<String> updateData(@PathVariable int rid,@RequestBody Reservation r)
+	{
+	     rsi.updateData(rid,r);
+	    
+		 return new ResponseEntity<String>("Data Updated..",HttpStatus.OK);	
+	}
 	
 	
 }
