@@ -20,5 +20,7 @@ public interface ReservationServiceI {
 
 	public void updateData(int rid, Reservation r);
 
+	public void deleteData(int rid);
+
 	
 }

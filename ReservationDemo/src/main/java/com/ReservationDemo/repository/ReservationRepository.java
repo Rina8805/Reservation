@@ -30,5 +30,10 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
     @Query(value="update Reservation set rname=:rname,contact=:contact,email=:email,age=:age,gender=:gender where rid=:rid")
 	public void updateData(int rid, String rname, long contact, String email, int age, String gender);
 
+	@Transactional
+	@Modifying
+	@Query(value="delete from Reservation where rid=?1")
+	public void deleteData(int rid);
+
 	
 }
