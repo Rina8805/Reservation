@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -83,5 +84,13 @@ public class HomeController {
 		 return new ResponseEntity<String>("Data Updated..",HttpStatus.OK);	
 	}
 	
+	// Delete Data
+	@DeleteMapping("/delete/{rid}")
+	public ResponseEntity<String> deleteData(@PathVariable int rid)
+	{
+	     rsi.deleteData(rid);
+		    
+		 return new ResponseEntity<String>("Data Deleted..",HttpStatus.OK);	
+	}
 	
 }

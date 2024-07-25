@@ -28,6 +28,6 @@ public class Reservation {
 	private Time reservationTime;
 	 
 	
-	
+
 
 }

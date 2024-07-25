@@ -71,6 +71,11 @@ public class ReservationServiceImpl implements ReservationServiceI{
 	}
 
 	
-
+	@Override
+	public void deleteData(int rid)
+	{
+		rr.deleteData(rid);
+		
+	}
 	
 }
